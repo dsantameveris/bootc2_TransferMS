@@ -1,4 +1,4 @@
-package com.everis.TransferMS.Model.DTO;
+package com.everis.TransferMS.DTO;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 

@@ -11,13 +11,19 @@ import lombok.Data;
 
 @Data
 @Document(collection = "movements")
-public class MoveDeposit
+public class Movement
 {
     @Id
     private String id;
 
     @NotBlank
-    private String destinationAccount;
+    private String moneySource;
+
+    @NotBlank
+    private String moneyDestination;
+
+    @NotBlank
+    private String movetype;
 
     @NotBlank
     private String currency;
@@ -27,4 +33,13 @@ public class MoveDeposit
 
     @NotBlank
     private Date doneAt;
+
+    public Movement(String movetype, String moneysource, String moneydestiny, String currency, double qty)
+    {
+        this.movetype = movetype;
+        this.moneySource = moneysource;
+        this.moneyDestination = moneydestiny;
+        this.currency = currency;
+        this.quantity = qty;
+    }
 }
